@@ -1,2 +1,6 @@
 # ESB_Matching
-ESB Matching is an algorithm used for Engineering Solutions at Berkeley's project placement team with the goal of matching engineers to semester projects. 
+ESB Matching is an algorithm used for Engineering Solutions at Berkeley's project placement team with the goal of matching engineers to semester projects. The algorithm is a modified version of the Gale-Shapley algorithm where each engineer ranks their project choices (1-4) and each project ranks their engineer choices (1-num_engineers). By using propose-and-reject, engineers propose to their highest ranked project, projects evaluate their proposals based on preferences, and each project keeps the top number of engineers based on preference ranking, rejecting the others. It will repeat this process until every engineer is assigned to only one project and each project has all of its slots filled with preferred engineers.
+
+This algorithm will always produce a stable matching where no pair exists where both the engineer or project prefer another over their current pairing. This algorithm runs in O(n^2) where n is num_engineers.
+
+To test the algorithm, it is checked that every engineer is only assigned to one project, each project has the correct number of engineers, and the matching is stable. 
