@@ -57,10 +57,7 @@ def test_stable_matching():
                 engineers_in_better_project = result[better_project]
                 if engineer in project_prefs[better_project]:
                     better_project_rank = project_prefs[better_project].index(engineer)
-                    worst_current_in_project = max(
-                        engineers_in_better_project,
-                        key=lambda e: project_prefs[better_project].index(e)
-                    )
+                    worst_current_in_project = max(engineers_in_better_project, key=lambda e: project_prefs[better_project].index(e))
                     if better_project_rank < project_prefs[better_project].index(worst_current_in_project):
                         assert False, "Matching is not stable."
 

@@ -23,8 +23,8 @@ class ESB_Matching:
                     project_slots[project].append(engineer)
                     break
                 else:
-                    worst_engineer = get_worst_engineer(project, project_slots, project_prefs)
-                    if is_better_choice(engineer, worst_engineer, project_prefs):
+                    worst_engineer = ESB_Matching.get_worst_engineer(project, project_slots, project_prefs)
+                    if ESB_Matching.is_better_choice(engineer, worst_engineer, project_prefs):
                         project_slots[project].remove(worst_engineer)
                         unassigned_engineers.append(worst_engineer)
                         project_slots[project].append(engineer)
